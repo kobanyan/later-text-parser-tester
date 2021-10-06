@@ -1,0 +1,67 @@
+{
+  "name": "later-text-parser-tester",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://kobanyan.github.io/later-text-parser-tester",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kobanyan/later-text-parser-tester.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kobanyan/later-text-parser-tester/issues"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@breejs/later": "4.0.2",
+    "@emotion/react": "11.4.1",
+    "@emotion/styled": "11.3.0",
+    "@mui/icons-material": "5.0.1",
+    "@mui/material": "5.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "web-vitals": "2.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/user-event": "12.8.3",
+    "@types/jest": "26.0.24",
+    "@types/node": "14.14.31",
+    "@types/react": "17.0.27",
+    "@types/react-dom": "17.0.9",
+    "husky": "7.0.2",
+    "lint-staged": "11.2.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.4.1",
+    "react-scripts": "4.0.3",
+    "typescript": "4.4.3"
+  },
+  "scripts": {
+    "start": "run-p react:start test",
+    "react:start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage --reporters='default'",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
