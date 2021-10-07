@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <Container component="footer">
+    <Container component="footer" sx={{ marginBottom: 2 }}>
       <Typography variant="body2" textAlign="center">
         {'Copyright © kobanyan 2021.'}
       </Typography>
