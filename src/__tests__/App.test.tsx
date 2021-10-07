@@ -12,5 +12,8 @@ describe('App', () => {
     expect(screen.queryByLabelText('Text')).toBeInTheDocument();
     expect(screen.queryByLabelText('Count')).toBeInTheDocument();
     expect(screen.queryByText('Occurrences')).toBeInTheDocument();
+    expect(
+      screen.queryByText('Copyright © kobanyan 2021.')
+    ).toBeInTheDocument();
   });
 });
