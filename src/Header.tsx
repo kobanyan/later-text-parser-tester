@@ -1,10 +1,12 @@
-import LaunchIcon from '@mui/icons-material/Launch';
+import DescriptionIcon from '@mui/icons-material/Description';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import React from 'react';
+
+import LinkButton from './LinkButton';
 
 const Header: React.FC = () => {
   return (
@@ -14,23 +16,18 @@ const Header: React.FC = () => {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             @breejs/later Text Parser Tester
           </Typography>
-          <Link
-            href="https://breejs.github.io/later/parsers.html#text"
-            target="_blank"
-            rel="noopener"
-            color="inherit"
-            underline="none"
+          <LinkButton
+            title="Open GitHub"
+            url="https://github.com/kobanyan/later-text-parser-tester"
           >
-            <Typography
-              sx={{
-                verticalAlign: 'middle',
-                display: 'inline-flex',
-              }}
-            >
-              <LaunchIcon fontSize="small" sx={{ marginRight: 1 }} />
-              Docs
-            </Typography>
-          </Link>
+            <GitHubIcon />
+          </LinkButton>
+          <LinkButton
+            title="Open @breejs/later Documents"
+            url="https://breejs.github.io/later/parsers.html#text"
+          >
+            <DescriptionIcon />
+          </LinkButton>
         </Toolbar>
       </AppBar>
     </Box>
