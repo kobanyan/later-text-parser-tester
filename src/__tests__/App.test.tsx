@@ -8,7 +8,12 @@ describe('App', () => {
     expect(
       screen.queryByText('@breejs/later Text Parser Tester')
     ).toBeInTheDocument();
-    expect(screen.queryByText('Docs')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'Open GitHub' })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'Open @breejs/later Documents' })
+    ).toBeInTheDocument();
     expect(screen.queryByLabelText('Text')).toBeInTheDocument();
     expect(screen.queryByLabelText('Count')).toBeInTheDocument();
     expect(screen.queryByText('Occurrences')).toBeInTheDocument();
