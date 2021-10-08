@@ -8,6 +8,9 @@ const Footer: React.FC = () => {
       <Typography variant="body2" textAlign="center">
         {'Copyright © kobanyan 2021.'}
       </Typography>
+      <Typography variant="body2" textAlign="center">
+        {`@breejs/later version: ${process.env.REACT_APP_BREEJS_LATER_VERSION}`}
+      </Typography>
     </Container>
   );
 };

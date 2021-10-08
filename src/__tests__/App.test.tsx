@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import App from '../App';
+import packageJson from '../../package.json';
 
 describe('App', () => {
   it('renders', () => {
@@ -19,6 +20,11 @@ describe('App', () => {
     expect(screen.queryByText('Occurrences')).toBeInTheDocument();
     expect(
       screen.queryByText('Copyright © kobanyan 2021.')
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(
+        `@breejs/later version: ${packageJson.dependencies['@breejs/later']}`
+      )
     ).toBeInTheDocument();
   });
 });
