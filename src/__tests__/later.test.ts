@@ -1,10 +1,12 @@
+import mockConsole from 'jest-mock-console';
+
 import { initialState, reducer } from '../later';
 
 describe('later', () => {
   describe('reducer', () => {
     const expectArrayOfDate = (array: any) => {
       expect(array).toBeInstanceOf(Array);
-      array.forEach((element) => {
+      array.forEach((element: any) => {
         expect(element).toBeInstanceOf(Date);
       });
     };
@@ -53,6 +55,20 @@ describe('later', () => {
           expect(count).toEqual(1);
           expect(error).toEqual(0);
           expect(occurrences).toHaveLength(0);
+        });
+      });
+      describe('later throws', () => {
+        it('sets state', () => {
+          mockConsole();
+          const { text, count, occurrences, error } = reducer(initialState, {
+            type: 'changeText',
+            payload: 'every between the 1 and 7',
+          });
+          expect(text).toEqual('every between the 1 and 7');
+          expect(count).toEqual(1);
+          expect(error).toEqual(0);
+          expect(occurrences).toHaveLength(0);
+          expect(console.error).toHaveBeenCalledTimes(1);
         });
       });
     });

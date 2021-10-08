@@ -20,17 +20,25 @@ type ChangeCountAction = {
 type Action = ChangeTextAction | ChangeCountAction;
 
 const calculate = ({ text, count }: { text: string; count: number }) => {
-  const scheduleData = later.parse.text(text);
-  const occurrences = later.schedule(scheduleData).next(count);
-  return {
-    error: scheduleData.error,
-    occurrences:
-      occurrences instanceof Date
-        ? [occurrences]
-        : occurrences
-        ? occurrences
-        : [],
-  };
+  try {
+    const scheduleData = later.parse.text(text);
+    const occurrences = later.schedule(scheduleData).next(count);
+    return {
+      error: scheduleData.error,
+      occurrences:
+        occurrences instanceof Date
+          ? [occurrences]
+          : occurrences
+          ? occurrences
+          : [],
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      error: 0,
+      occurrences: [],
+    };
+  }
 };
 
 export const reducer = (state: typeof initialState, action: Action) => {
